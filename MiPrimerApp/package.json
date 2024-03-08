@@ -1,0 +1,14 @@
+{
+  "name": "miprimerapp",
+  "version": "1.0.0",
+  "description": "Mi primer aplicación con Electron.",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Angel B.",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.0"
+  }
+}
