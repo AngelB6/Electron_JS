@@ -1,0 +1,30 @@
+{
+  "name": "appmarcadores",
+  "version": "1.0.0",
+  "description": "Aplicación para la gestion de marcadores (URL)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js"
+  },
+  "author": "Angel B.",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^29.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AngelB6/Electron_JS.git"
+  },
+  "keywords": [
+    "Electron",
+    "App",
+    "Escritorio"
+  ],
+  "bugs": {
+    "url": "https://github.com/AngelB6/Electron_JS/issues"
+  },
+  "homepage": "https://github.com/AngelB6/Electron_JS#readme",
+  "dependencies": {
+    "electron-packager": "^17.1.2"
+  }
+}
