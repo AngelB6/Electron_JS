@@ -13,17 +13,18 @@ class Marcadores{
     }
 
     agregarEventListeners(){
-        this.inputURL.addEventListener('keyup', ()=>{
-            this.creacionMarcador.disabled = !this.inputURL.validity.valid;
+        this.inputURL.addEventListener('input', ()=>{
+            this.creacionMarcador.disabled = !this.inputURL.checkValidity();
         });
 
         this.creacionMarcador.addEventListener('submit', this.crearMarcador.bind(this))
     }
 
     crearMarcador(evento){
+        console.log('Crear marcados llamado')
         evento.preventDefault();
 
-        const url = thi.marcadorURL.nodeValue;
+        const url = this.inputURL.value;
 
         fetch(url)
         .then(respuesta => respuesta.text())
@@ -77,4 +78,6 @@ class Marcadores{
     }
 }
 
-new Marcadores();
+document.addEventListener('DOMContentLoaded', function () {
+    new Marcadores();
+});
