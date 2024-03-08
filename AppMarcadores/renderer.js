@@ -17,11 +17,11 @@ class Marcadores{
             this.creacionMarcador.disabled = !this.inputURL.checkValidity();
         });
 
-        this.creacionMarcador.addEventListener('submit', this.crearMarcador.bind(this))
+        this.formularioCreacionMarcadores.addEventListener('submit', this.crearMarcador.bind(this))
     }
 
     crearMarcador(evento){
-        console.log('Crear marcados llamado')
+        console.log('Crear marcador llamado')
         evento.preventDefault();
 
         const url = this.inputURL.value;
@@ -36,7 +36,7 @@ class Marcadores{
         .catch(error => this.reportarError(error, url))
     }
 
-    extraerContenido(Contenido){
+    extraerContenido(contenido){
         return this.parser.parseFromString(contenido, 'text/html')
     }
 
