@@ -1,0 +1,17 @@
+{
+  "name": "cursoelectron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "standard": "^17.1.0",
+    "electron": "^29.1.3"
+  }
+}
