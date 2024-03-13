@@ -1,8 +1,11 @@
+const { shell } = require("electron");
+
 class Marcadores{
     constructor(){
         this.mensajeError = document.querySelector('.mensajeError');
         this.formularioCreacionMarcadores = document.querySelector('.creacionMarcadorFormulario');
         this.inputURL = document.querySelector('.creacionMarcadorURL');
+        this.limpiarFormulario = this.limpiarFormulario.bind(this);
         this.creacionMarcador= document.querySelector('.creacionMarcadorBoton');
         this.marcadores = document.querySelector('.marcadores');
         this.eliminarMarcadores = document.querySelector('.removerMarcadores');
@@ -17,7 +20,11 @@ class Marcadores{
             this.creacionMarcador.disabled = !this.inputURL.checkValidity();
         });
 
-        this.formularioCreacionMarcadores.addEventListener('submit', this.crearMarcador.bind(this))
+        this.formularioCreacionMarcadores.addEventListener('submit', this.crearMarcador.bind(this));
+
+        this.eliminarMarcadores.addEventListener('click', this.eliminarMarcadoresCreados.bind(this));
+
+        this.marcadores.addEventListener('click', this.abrirEnlaceMarcador.bind(this))
     }
 
     crearMarcador(evento){
@@ -28,11 +35,11 @@ class Marcadores{
 
         fetch(url)
         .then(respuesta => respuesta.text())
-        .then(this.extraerContenido)
-        .then(this.encontrarTitle)
+        .then(this.extraerContenido.bind(this))
+        .then(this.encontrarTitle.bind(this))
         .then(titulo => this.almacenarMarcador(url, titulo))
-        .then(this.limpiarFormulario)
-        .then(this.visualMarcadores)
+        .then(this.limpiarFormulario())
+        .then(this.visualMarcadores())
         .catch(error => this.reportarError(error, url))
     }
 
@@ -40,7 +47,7 @@ class Marcadores{
         return this.parser.parseFromString(contenido, 'text/html')
     }
 
-    encontrarTitle(){
+    encontrarTitle(html){
         return html.querySelector('title').innerText
     }
 
@@ -49,7 +56,7 @@ class Marcadores{
     }
 
     limpiarFormulario(){
-        this.marcadorURL.value = null;
+        this.inputURL.value = '';
     }
 
     obtenerMarcadores(){
@@ -62,11 +69,11 @@ class Marcadores{
     }
 
     visualMarcadores(){
-        let marcadores = this.obtenerEnlaces();
+        let marcadores = this.obtenerMarcadores();
 
-        let html = marcadores.map(this.generarHtmlMarcador()).join('');
+        let html = marcadores.map(marcador => this.generarHtmlMarcador(marcador)).join('');
 
-        this.mensajeError.innerHTML = html;
+        this.marcadores.innerHTML = html;
     }
 
     reportarError(error, url){
@@ -76,8 +83,20 @@ class Marcadores{
             this.mensajeError.innerText = null;
         }, 5000);
     }
+
+    eliminarMarcadoresCreados(){
+        localStorage.clear()
+
+        this.marcadores.innerHTML = ''
+    }
+
+    abrirEnlaceMarcador(evento){
+        if (evento.target.href) {
+            evento.preventDefault();
+            shell.shell.openExternal(evento.target.href)
+        }
+    }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    new Marcadores();
-});
+let marcadores = new Marcadores();
+marcadores.visualMarcadores();
