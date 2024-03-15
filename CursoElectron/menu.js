@@ -1,4 +1,5 @@
-const { app, Menu } = require('electron')
+const { Menu, dialog } = require('electron')
+
 
 const setMainMenu = (mainWindow) => {
     const template = [
@@ -10,6 +11,28 @@ const setMainMenu = (mainWindow) => {
                 { role: 'quit' }
             ]
         },
+        {
+            label: 'Edit',
+            submenu:[
+                {
+                 label: 'Abrir Archivo',
+                 click: () =>{
+                    dialog.showOpenDialog(mainWindow, {
+                        filters: [
+                            {
+                                name: 'Menu',
+                                extensiones: ['md']
+                            }
+                        ],
+                        title: "Slecciona el archivo Markdonw",
+                        defaultPath: '~/Desktop',
+                        properties: ['openFile', 'openDirectory']
+                      })
+                 }
+                }
+            ]
+        }
+        ,
         {
         label: 'Themes',
             submenu: [
