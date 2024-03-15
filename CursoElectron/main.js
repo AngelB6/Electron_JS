@@ -1,16 +1,20 @@
 const { app, BrowserWindow } = require('electron')
 const { setMainMenu } = require('./menu.js')
+const path = require('path')
 
 function createWindow(){
-  const window = new BrowserWindow({
+  const mainWindow = new BrowserWindow({
     minWidth: 1200,
-    minHeight: 600
+    minHeight: 600,
+    webPreferences:{
+      preload: path.join(__dirname, 'preload.js')
+    }
   })
 
-  window.loadFile('index.html')
-}
+  mainWindow.loadFile('index.html')
 
-setMainMenu()
+  setMainMenu(mainWindow)
+}
 
 app.whenReady().then(() =>{
   createWindow()
