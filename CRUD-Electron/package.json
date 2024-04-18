@@ -1,7 +1,7 @@
 {
-  "name": "cursoelectron",
+  "name": "CRUD-Electron",
   "version": "1.0.0",
-  "description": "",
+  "description": "Prueba de CRUD con Electron",
   "main": "main.js",
   "scripts": {
     "dev": "electron .",
