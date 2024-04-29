@@ -1,0 +1,27 @@
+{
+  "name": "gestorpersonas",
+  "version": "1.0.0",
+  "description": "Gestor de personas en Electron",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "AngelB6"
+  },
+  "keywords": [
+    "Electron",
+    "gestor",
+    "personas",
+    "escritorio"
+  ],
+  "author": "Angel B.",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^30.0.1"
+  },
+  "dependencies": {
+    "nedb": "^1.8.0"
+  }
+}

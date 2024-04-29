@@ -1,17 +1,18 @@
 {
-  "name": "CRUD-Electron",
+  "name": "crud-electron",
   "version": "1.0.0",
-  "description": "Prueba de CRUD con Electron",
-  "main": "main.js",
+  "description": "",
+  "main": "src/main.js",
   "scripts": {
-    "dev": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "standard": "^17.1.0"
+    "electron-reload": "^2.0.0-alpha.1",
+    "promise-mysql": "^5.2.0"
   },
   "devDependencies": {
     "electron": "^30.0.1"
