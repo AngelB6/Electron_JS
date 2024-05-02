@@ -1,12 +1,17 @@
-require('electron-reload')(__dirname);
-const { app, BrowserWindow } = require("electron");
+require("electron-reload")(__dirname);
+const { app, BrowserWindow, ipcMain } = require("electron");
 const { getConnection } = require("./database");
+const path = require("path");
 
-
-function createProduct(product) {
-  const conn = getConnection();
-  console.log(product);
+function hello() {
+  console.log("Hello World");
+  //   const conn = getConnection();
+  //   console.log(product);
 }
+
+ipcMain.on("hello", (e, arg) => {
+  hello();
+});
 
 let window;
 
@@ -15,15 +20,17 @@ function createWindow() {
     width: 800,
     height: 600,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      contextIsolation: true,
+      preload: path.join(__dirname, "preload.js"),
     },
   });
   window.loadFile("src/ui/index.html");
 }
 
-app.whenReady().then(createWindow)
+app.whenReady().then(createWindow);
 
 module.exports = {
   createWindow,
-  createProduct,
+  hello,
 };

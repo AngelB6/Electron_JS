@@ -27,6 +27,12 @@
             </div>
         </div>
     </main>
+    <script>
+        if (typeof require === 'undefined') {
+          window.require = require;
+          window.process = process;
+        }
+      </script>
     <script src="app.js"></script>
 </body>
 </html>

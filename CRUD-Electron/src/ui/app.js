@@ -1,7 +1,8 @@
 const productForm = document.getElementById("productForm");
+const { ipcRenderer } = window.electron;
+const require = window.electron.require;
 
-const { ipcRenderer } = require("electron");
-const main = ipcRenderer.require("./main.js");
+ipcRenderer.send('hello');
 
 const productName = document.getElementById("name");
 const productPrice = document.getElementById("price");
@@ -14,5 +15,4 @@ productForm.addEventListener("submit", (e) => {
     price: productPrice.value,
     description: productDescription.value,
   };
-  main.createProduct(newProduct);
 });
