@@ -1,8 +1,8 @@
 {
-  "name": "crud-gpt",
+  "name": "crud-electron",
   "version": "1.0.0",
   "description": "",
-  "main": "./src/main.js",
+  "main": "src/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron ."
@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^30.0.2",
-    "mysql": "^2.18.1"
+    "electron-reload": "^2.0.0-alpha.1",
+    "promise-mysql": "^5.2.0"
+  },
+  "devDependencies": {
+    "electron": "^30.0.1"
   }
 }

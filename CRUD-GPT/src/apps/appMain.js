@@ -3,5 +3,5 @@ const buttFormulario = document.getElementById("btnFormulario");
 const { ipcRenderer } = require("electron");
 
 buttFormulario.addEventListener("click", () => {
-  ipcRenderer.send("cambiarPantalla", "./formulario.html");
+  ipcRenderer.send("cambiarPantalla", "../view/formulario.html");
 });
