@@ -4,14 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Formulario registro servicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Formulario</h1>
+    <div class="m-0 p-0 items-center">
+    <h1 class="text-center">Formulario</h1>
     <form>
       <label>Fecha Servicio:</label>
       <input type="date" name="fechaSer" id="fechaServi">
+      <label>Nombre Cliente:</label>
+      <input type="text" name="nomClie" id="nomCliente">
+      <label>Num. Ref:</label>
+      <input type="number" id="numRef">
+      <label for="monedaCoti">Moneda de cotización:</label>
+      <select id="monedaCoti" name="Monedas">
+        <option value="USD">USD</option>
+        <option value="COP">COP</option>
+      </select>
+      <label for="tipoServ">Tipo de servicio</label>
+      <select id="tipoServ">
+        <option value="EXMSB LCL">EXMSB LCL</option>
+        <option value="EXMSB 20'">EXMSB 20'</option>
+        <option value="EXMSB 20' + Vehículo">EXMSB 20' + Vehículo</option>
+        <option value="EXMSB 40'">EXMSB 40'</option>
+        <option value="EXMSB 40' + Vehículo">EXMSB 40' + Vehículo</option>
+        <option value="EXMAB">EXMAB</option>
+        <option value="EXMSA LCL">EXMSA LCL</option>
+        <option value="EXMSA 20'">EXMSA 20'</option>
+        <option value="EXMSA 20' + Vehículo">EXMSA 20' + Vehículo</option>
+        <option value="EXMSA 40'">EXMSA 40'</option>
+        <option value="EXMSA 40' + Vehículo">EXMSA 40' + Vehículo</option>
+        <option value="EXMAA">EXMAA</option>
+      </select>
+      <label for="estatusClie">Estatus cliente:</label>
+      <select id="estatusClie">
+        <option value="Diplomatico">Diplomatico</option>
+        <option value="No Diplomatico">No Diplomatico</option>
+      </select>
+      <label>Volumen:</label>
+      <input type="number">
+      <label for="catCliente">Categoria cliente:</label>
+      <select id="catCliente">
+        <option value="Regular">Regular</option>
+        <option value="VIP">VIP</option>
+      </select>
     </form>
-    <button id="backMain">Volver</button>
-    <script src="../apps/appForm.js"></script>
+    <button id="setFormServicio" class="bg-blue-500 text-white font-bold py-1 px-2 rounded">Enviar</button>
+    <button id="backMain" class="bg-blue-500 text-white font-bold py-1 px-2 rounded">Volver</button>
+  </div>
+  <script src="../apps/appForm.js"></script>
   </body>
 </html>

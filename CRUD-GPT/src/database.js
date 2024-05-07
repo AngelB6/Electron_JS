@@ -12,7 +12,7 @@ function conectarBD() {
     });
     connection.connect((err) => {
       if (err) {
-        console.error("Error de conexión:", err);
+        console.error("Error de conexion:", err);
         connection = null;
         return;
       }
