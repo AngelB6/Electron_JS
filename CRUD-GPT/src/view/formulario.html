@@ -7,8 +7,10 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   </head>
   <body>
-    <div class="m-0 p-0 items-center">
-    <h1 class="text-center">Formulario</h1>
+    <div class="flex items-center justify-center pt-8">
+    <h1 class="text-center font-extrabold">Formulario</h1>
+    </div>
+    <div class="bg-slate-400 flex gap-3 pt-4">
     <form>
       <label>Fecha Servicio:</label>
       <input type="date" name="fechaServicio" id="fechaServ">
@@ -49,9 +51,9 @@
         <option value="VIP">VIP</option>
       </select>
     </form>
+  </div>
     <button id="setFormServicio" class="bg-blue-500 text-white font-bold py-1 px-2 rounded">Enviar</button>
     <button id="backMain" class="bg-blue-500 text-white font-bold py-1 px-2 rounded">Volver</button>
-  </div>
   <script src="../apps/appForm.js"></script>
   </body>
 </html>

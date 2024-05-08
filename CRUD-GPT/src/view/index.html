@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bienvenido!</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1 style="display: flex; text-align: center; align-items: center">
-      Bienvenido a mi app de Electron
-    </h1>
-    <button id="btnFormulario">Formulario</button>
+    <div class="flex items-center justify-center pt-8">
+      <h1 class="text-center font-extrabold">Bienvenido!</h1>
+    </div>
+    <div class="mt-4 flex items-center justify-center">
+      <button
+        id="btnFormulario"
+        class="font-light text-white bg-blue-500 border-2 rounded-lg py-1 px-2 hover:font-bold hover:text-blue-500 hover:bg-slate-50 hover:border-blue-500">
+        Formulario
+      </button>
+    </div>
     <script src="../apps/appMain.js"></script>
   </body>
 </html>
