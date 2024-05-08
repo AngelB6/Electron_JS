@@ -1,23 +1,23 @@
-const mysql = require("mysql");
+const mysql = require("mysql2/promise");
 
 let connection;
 
-function conectarBD() {
+async function conectarBD() {
   if (!connection) {
-    connection = mysql.createConnection({
+    try{ 
+    connection = await mysql.createConnection({
       host: "localhost",
       user: "root",
       password: "",
-      database: "electroncrud",
+      database: "test"
     });
-    connection.connect((err) => {
-      if (err) {
-        console.error("Error de conexion:", err);
-        connection = null;
-        return;
-      }
-      console.log("Conectado a la BD");
-    });
+    console.log("Conectado a la BD");
+    console.log("Estado de la conexion:", connection.state);
+    }
+    catch (error){
+      console.error("Error de conexion con la BD: ", error)
+      connection = null
+    }
   } else {
     console.log("Ya existe una conexion a la BD");
   }

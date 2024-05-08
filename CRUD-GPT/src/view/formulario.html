@@ -11,18 +11,18 @@
     <h1 class="text-center">Formulario</h1>
     <form>
       <label>Fecha Servicio:</label>
-      <input type="date" name="fechaSer" id="fechaServi">
+      <input type="date" name="fechaServicio" id="fechaServ">
       <label>Nombre Cliente:</label>
-      <input type="text" name="nomClie" id="nomCliente">
+      <input type="text" name="nomCliente" id="nomClie">
       <label>Num. Ref:</label>
-      <input type="number" id="numRef">
+      <input type="number" name="numeroRef" id="numRef">
       <label for="monedaCoti">Moneda de cotización:</label>
-      <select id="monedaCoti" name="Monedas">
+      <select id="monedaCoti" name="monedaCotizacion">
         <option value="USD">USD</option>
         <option value="COP">COP</option>
       </select>
       <label for="tipoServ">Tipo de servicio</label>
-      <select id="tipoServ">
+      <select id="tipoServ" name="tipoServicio">
         <option value="EXMSB LCL">EXMSB LCL</option>
         <option value="EXMSB 20'">EXMSB 20'</option>
         <option value="EXMSB 20' + Vehículo">EXMSB 20' + Vehículo</option>
@@ -37,14 +37,14 @@
         <option value="EXMAA">EXMAA</option>
       </select>
       <label for="estatusClie">Estatus cliente:</label>
-      <select id="estatusClie">
+      <select id="estatusClie" name="estatusCliente">
         <option value="Diplomatico">Diplomatico</option>
         <option value="No Diplomatico">No Diplomatico</option>
       </select>
       <label>Volumen:</label>
-      <input type="number">
-      <label for="catCliente">Categoria cliente:</label>
-      <select id="catCliente">
+      <input type="number" id="vol" name="volumen">
+      <label for="categoCliente">Categoria cliente:</label>
+      <select id="categoCliente" name="categoriaCliente">
         <option value="Regular">Regular</option>
         <option value="VIP">VIP</option>
       </select>
