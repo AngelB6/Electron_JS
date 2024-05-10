@@ -3,57 +3,99 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Formulario registro servicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <title>Formulario Servicio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="flex items-center justify-center pt-8">
-    <h1 class="text-center font-extrabold">Formulario</h1>
+
+    <div class="flex items-center justify-center mt-4">
+      <h1 class="text-center font-extrabold text-lg">Formulario</h1>
     </div>
-    <div class="bg-slate-400 flex gap-3 pt-4">
-    <form>
-      <label>Fecha Servicio:</label>
-      <input type="date" name="fechaServicio" id="fechaServ">
-      <label>Nombre Cliente:</label>
-      <input type="text" name="nomCliente" id="nomClie">
-      <label>Num. Ref:</label>
-      <input type="number" name="numeroRef" id="numRef">
-      <label for="monedaCoti">Moneda de cotización:</label>
-      <select id="monedaCoti" name="monedaCotizacion">
-        <option value="USD">USD</option>
-        <option value="COP">COP</option>
-      </select>
-      <label for="tipoServ">Tipo de servicio</label>
-      <select id="tipoServ" name="tipoServicio">
-        <option value="EXMSB LCL">EXMSB LCL</option>
-        <option value="EXMSB 20'">EXMSB 20'</option>
-        <option value="EXMSB 20' + Vehículo">EXMSB 20' + Vehículo</option>
-        <option value="EXMSB 40'">EXMSB 40'</option>
-        <option value="EXMSB 40' + Vehículo">EXMSB 40' + Vehículo</option>
-        <option value="EXMAB">EXMAB</option>
-        <option value="EXMSA LCL">EXMSA LCL</option>
-        <option value="EXMSA 20'">EXMSA 20'</option>
-        <option value="EXMSA 20' + Vehículo">EXMSA 20' + Vehículo</option>
-        <option value="EXMSA 40'">EXMSA 40'</option>
-        <option value="EXMSA 40' + Vehículo">EXMSA 40' + Vehículo</option>
-        <option value="EXMAA">EXMAA</option>
-      </select>
-      <label for="estatusClie">Estatus cliente:</label>
-      <select id="estatusClie" name="estatusCliente">
-        <option value="Diplomatico">Diplomatico</option>
-        <option value="No Diplomatico">No Diplomatico</option>
-      </select>
-      <label>Volumen:</label>
-      <input type="number" id="vol" name="volumen">
-      <label for="categoCliente">Categoria cliente:</label>
-      <select id="categoCliente" name="categoriaCliente">
-        <option value="Regular">Regular</option>
-        <option value="VIP">VIP</option>
-      </select>
-    </form>
-  </div>
-    <button id="setFormServicio" class="bg-blue-500 text-white font-bold py-1 px-2 rounded">Enviar</button>
-    <button id="backMain" class="bg-blue-500 text-white font-bold py-1 px-2 rounded">Volver</button>
-  <script src="../apps/appForm.js"></script>
+
+    <div class="flex justify-center items-center">
+      <div class="grid grid-cols-2 gap-10 mt-4">
+        <div>
+          <label class="font-medium">Fecha Servicio:</label>
+          <input
+            type="date"
+            name="fechaServicio"
+            id="fechaServ"
+            class="border-b border-blue-800 font-sans text-sm w-full outline-none"
+          />
+        </div>
+        <div>
+          <label class="font-medium">Nombre Cliente:</label>
+          <input type="text" name="nomCliente" id="nomClie" class="border-b border-blue-800 outline-none font-sans text-sm w-full"/>
+        </div>
+        <div>
+          <label class="font-medium">Num. Ref:</label>
+          <input type="number" name="numeroRef" id="numRef" class="border-b border-blue-800 outline-none font-sans text-sm w-full"/>
+        </div>
+        <div>
+          <label for="monedaCoti" class="font-medium">Moneda de cotización:</label>
+          <select id="monedaCoti" name="monedaCotizacion" class="border-b border-blue-800 outline-none font-sans text-sm w-full">
+            <option value="USD">USD</option>
+            <option value="COP">COP</option>
+          </select>
+        </div>
+        <div>
+          <label for="tipoServ" class="font-medium">Tipo de servicio</label>
+          <select id="tipoServ" name="tipoServicio" class="border-b border-blue-800 outline-none font-sans text-sm w-full">
+            <option value="EXMSB LCL">EXMSB LCL</option>
+            <option value="EXMSB 20'">EXMSB 20'</option>
+            <option value="EXMSB 20' + Vehículo">EXMSB 20' + Vehículo</option>
+            <option value="EXMSB 40'">EXMSB 40'</option>
+            <option value="EXMSB 40' + Vehículo">EXMSB 40' + Vehículo</option>
+            <option value="EXMAB">EXMAB</option>
+            <option value="EXMSA LCL">EXMSA LCL</option>
+            <option value="EXMSA 20'">EXMSA 20'</option>
+            <option value="EXMSA 20' + Vehículo">EXMSA 20' + Vehículo</option>
+            <option value="EXMSA 40'">EXMSA 40'</option>
+            <option value="EXMSA 40' + Vehículo">EXMSA 40' + Vehículo</option>
+            <option value="EXMAA">EXMAA</option>
+          </select>
+        </div>
+        <div>
+          <label for="estatusClie" class="font-medium">Estatus cliente:</label>
+          <select id="estatusClie" name="estatusCliente" class="border-b border-blue-800 outline-none font-sans text-sm w-full">
+            <option value="Diplomatico">Diplomatico</option>
+            <option value="No Diplomatico">No Diplomatico</option>
+          </select>
+        </div>
+        <div>
+          <label class="font-medium">Volumen:</label>
+          <input type="number" id="vol" name="volumen" class="border-b border-blue-800 outline-none font-sans text-sm w-full"/>
+        </div>
+        <div>
+          <label for="categoCliente" class="font-medium">Categoria cliente:</label>
+          <select id="categoCliente" name="categoriaCliente" class="border-b border-blue-800 outline-none font-sans text-sm w-full">
+            <option value="Regular">Regular</option>
+            <option value="VIP">VIP</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-8">
+      <div class="flex space-x-4">
+        <button
+          id="setFormServicio"
+          class="font-medium text-white bg-blue-600 border-2 border-blue-600 rounded-lg py-1 px-2 transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:text-gray-900"
+        >
+          Enviar
+        </button>
+        <button
+          id="backMain"
+          class="font-medium text-white bg-blue-600 border-2 border-blue-600 rounded-lg py-1 px-2 transition-colors duration-300 ease-in-out hover:bg-blue-600 hover:border-blue-600 hover:text-gray-900"
+        >
+          Volver
+        </button>
+      </div>
+    </div>
+
+    <script src="../apps/appForm.js"></script>
   </body>
 </html>
